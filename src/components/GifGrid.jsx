@@ -1,9 +1,15 @@
+import ReactPaginate from "react-paginate";
 import useGifs from "../hooks/useGifs"
 import GifItem from "./GifItem";
 
 
 const GifGrid = ({ category }) => {
-    const { images, isLoading, error } = useGifs(category);
+    const { images, isLoading, error, pages, fetchGifs } = useGifs(category);
+
+
+    const handlePageClick = () => {
+        fetchGifs(category,  page + 3);
+    }
 
     const renderEvents = () => {
         if (isLoading) {
@@ -23,6 +29,8 @@ const GifGrid = ({ category }) => {
         return (
             <div className="card-grid">
                 {images.map((image) => (<GifItem key={image.id} {...image} />))}
+
+                <button onClick={handlePageClick}>Siguiente</button>
             </div>
         )
     }
