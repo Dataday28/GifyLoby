@@ -4,7 +4,7 @@
 
 body {
     padding: 60px;
-    background-color: hsl(192, 62%, 39%);
+    background-color: white;
 }
 
 /* properties */
@@ -39,13 +39,13 @@ body {
     -webkit-background-clip: text;
     color: transparent;
 
-    background-image: url("../public/stars.jpg");
+    background-image: url("../public/color.jpg");
     animation: animar-texto 30s ease-in-out infinite;
 }
 
 .search {
     text-align: center;
-    background-color: #354761;
+    background-color: #99d3d5;
     border-radius: 30px;
     border: none;
     color: white;
@@ -56,24 +56,19 @@ body {
     box-shadow: 5px 5px 10px black;
 }
 
-h2 {
-    font-size: 1.5rem;
-}
-
 .title-cat {
-    border-color: #354761;
+    border-color: #99c5d5;
     border-top-style: solid;
     border-top-width: 1px;
     padding-top: 20px;
     font-size: 4rem;
     margin-bottom: 10px;
-    color: #354761;
+    color: #d599a8;
 }
 
 .card-grid {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    column-count: 3;
+    column-gap: 10px;
     justify-content: center;
 }
 
@@ -81,10 +76,11 @@ h2 {
     display: flex;
     flex-direction: column;
     height: 0%;
-    margin-bottom: 20px;
-    margin-right: 20px;
+    margin-bottom: 10px;
+    margin-right: 10px;
     overflow: hidden;
-    position: relative
+    position: relative;
+    transition: 0.7s;
 }
 
 .card-title {
@@ -100,7 +96,40 @@ h2 {
 
 .card-img {
     width: 100%;
-    height: 300px;
+}
+
+.btn_up {
+    position: fixed;
+    background-color: #d9bff4;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    bottom: 2%;
+    right: 1%;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 4px rgba(183, 98, 211, 0.253);
+    overflow: hidden;
+    transition-duration: 0.3s;
+}
+
+.btn_up::before {
+    bottom: -20px;
+    content: "Ir al inicio";
+    color: white;
+    font-size: 0px;
+}
+
+.svgIcon {
+    width: 12px;
+    transition-duration: 0.3s;
+}
+
+.svgIcon path {
+    fill: white;
 }
 
 .loader {
@@ -118,23 +147,25 @@ h2 {
     border-radius: 50px;
     width: 50px;
     height: 50px;
-    background-color: #354761;
 }
 
 .dot-1 {
     transform: scale(var(--dot1));
+    background-color: #bfdaf4;
 }
 
 .dot-2 {
     transform: scale(var(--dot2));
+    background-color: #e5efef;
 }
 
 .dot-3 {
     transform: scale(var(--dot3));
+    background-color: #99d5bc;
 }
 
 .footer {
-    background-color: whitesmoke;
+    background-color: white;
     border-top-style: solid;
     border-top-width: 1px;
     text-align: center;
@@ -153,6 +184,27 @@ h2 {
     opacity: 1;
     transition: 1s;
 }
+
+.btn_up:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: 0.3s;
+    background-color: rgb(218, 170, 193);
+    align-items: center;
+}
+
+.btn_up:hover .svgIcon {
+    transition-duration: 0.3s;
+    transform: translateY(-200%);
+}
+
+.btn_up:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    bottom: unset;
+    transition-duration: 0.3s;
+}
+
 
 /* Animaciones */
 
