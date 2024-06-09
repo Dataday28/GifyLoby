@@ -1,7 +1,6 @@
-import ReactPaginate from "react-paginate";
 import useGifs from "../hooks/useGifs"
 import GifItem from "./GifItem";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 
 const GifGrid = ({ category }) => {
